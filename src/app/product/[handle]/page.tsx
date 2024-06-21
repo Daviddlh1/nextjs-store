@@ -1,3 +1,6 @@
+import { ProductView } from "@/components/product/ProductView"
+import { getProducts } from "@/services/shopify/products"
+
 interface ProductPageProps {
     searchParams: {
         id: string
@@ -5,10 +8,11 @@ interface ProductPageProps {
 }
 
 export default async function ProductPage({ searchParams }: ProductPageProps) {
-    console.log(searchParams)
+    const { id } = searchParams
+    const products = await getProducts(id)
+    const product = products[0]
+    
     return (
-        <div>
-            <h1>Product Page</h1>
-        </div>
+       <ProductView product={product} /> 
     )
 }
