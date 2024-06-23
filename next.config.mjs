@@ -4,7 +4,7 @@ import path from 'node:path';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-console.log('dirname', __dirname);
+// console.log('dirname', __dirname);
 
 const nextConfig = {
   sassOptions: {
